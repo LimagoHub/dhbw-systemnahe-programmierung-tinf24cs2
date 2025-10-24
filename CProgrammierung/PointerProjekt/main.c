@@ -3,26 +3,40 @@
 #include "stdlib.h"
 
 
-double sum(int anzahl, double ersterWert, ...){
 
-    double result = 0;
-    double *ptr = &ersterWert;
 
-    for(int i = 0; i < anzahl; i ++) {
-        result += ptr[i];
-    }
-    return result;
+
+typedef int (*MyIntPtrType)();
+typedef double(*Operation)(double, double);
+
+int sinnDesLebens() {
+    return 42;
 }
 
-void ausgabe(char * erstesWort, ...) {
-    char ** ptr = &erstesWort;
-    while(*ptr)
-        printf("%s\n", *ptr++);
+double add(double a, double b) {
+    return a + b;
+}
+
+double sub(double a, double b) {
+    return add(a, -b);
+}
+
+double mult(double a, double b) {
+    return a * b;
 }
 
 int main(int argc, char ** argv, char ** env) {
 
-    ausgabe("Hallo", "Welt", "Hallo","Universum", NULL);
-    //printf("%lf\n", sum(3, 10.0, 20.0,30.0));
+
+    Operation feld[] = {add,sub, mult};
+
+    double a = 3.0;
+    double b = 4.0;
+
+    for(int i = 0 ; i < sizeof (feld)/sizeof (Operation); i++){
+        printf("%lf\n",feld[i](a,b) );
+    }
+
+
     return 0;
 }
