@@ -2,40 +2,19 @@
 #include <string.h>
 #include "stdlib.h"
 
-
-
-
-
-typedef int (*MyIntPtrType)();
-typedef double(*Operation)(double, double);
-
-int sinnDesLebens() {
-    return 42;
+inline int NeuesMax(int x, int y) {
+    return x>y?x:y;
 }
 
-double add(double a, double b) {
-    return a + b;
-}
+#define SIEBEN 3+4
+#define MAX(x,y) x>y?x:y
 
-double sub(double a, double b) {
-    return add(a, -b);
-}
-
-double mult(double a, double b) {
-    return a * b;
-}
-
-int main(int argc, char ** argv, char ** env) {
+int main() {
 
 
-    Operation feld[] = {add,sub, mult};
-
-    double a = 3.0;
-    double b = 4.0;
-
-    for(int i = 0 ; i < sizeof (feld)/sizeof (Operation); i++){
-        printf("%lf\n",feld[i](a,b) );
-    }
+    int a = 20;
+    int b =30;
+    int m = NeuesMax(++a,++b); // ++a>++b?++a:++b
 
 
     return 0;
