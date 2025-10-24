@@ -1,11 +1,23 @@
 #include <stdio.h>
 
-void stringcopy(char * destination, char *source) {
+size_t stringlenght(char * wort) {
+    register size_t counter = 0;
 
+    while(wort[counter])
+        counter ++;
+
+    return counter;
 }
 
 
-int main(void) {
+void stringcopy(char * destination, char *source) {
+
+    while(*destination++ = *source++){}
+}
+
+
+
+int main(int argc, char ** argv) {
 
     char wort[] = "hallo";
     char buffer[100];
@@ -13,7 +25,7 @@ int main(void) {
     int a = 10;
     stringcopy(buffer, wort);
 
-    printf("%s\n", buffer);
+    printf("%d\n", argc);
 
     //printf("%s\n", wort);
     //printf("%d\n", sizeof(wort));
