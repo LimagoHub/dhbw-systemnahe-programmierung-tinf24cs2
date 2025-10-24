@@ -1,34 +1,28 @@
 #include <stdio.h>
+#include <string.h>
+#include "stdlib.h"
 
-size_t stringlenght(char * wort) {
-    register size_t counter = 0;
 
-    while(wort[counter])
-        counter ++;
+double sum(int anzahl, double ersterWert, ...){
 
-    return counter;
+    double result = 0;
+    double *ptr = &ersterWert;
+
+    for(int i = 0; i < anzahl; i ++) {
+        result += ptr[i];
+    }
+    return result;
 }
 
-
-void stringcopy(char * destination, char *source) {
-
-    while(*destination++ = *source++){}
+void ausgabe(char * erstesWort, ...) {
+    char ** ptr = &erstesWort;
+    while(*ptr)
+        printf("%s\n", *ptr++);
 }
 
+int main(int argc, char ** argv, char ** env) {
 
-
-int main(int argc, char ** argv) {
-
-    char wort[] = "hallo";
-    char buffer[100];
-
-    int a = 10;
-    stringcopy(buffer, wort);
-
-    printf("%d\n", argc);
-
-    //printf("%s\n", wort);
-    //printf("%d\n", sizeof(wort));
-
+    ausgabe("Hallo", "Welt", "Hallo","Universum", NULL);
+    //printf("%lf\n", sum(3, 10.0, 20.0,30.0));
     return 0;
 }
