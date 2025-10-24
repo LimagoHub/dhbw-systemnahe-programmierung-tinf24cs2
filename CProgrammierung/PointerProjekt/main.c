@@ -1,27 +1,22 @@
 #include <stdio.h>
 
+void stringcopy(char * destination, char *source) {
+
+}
+
+
 int main(void) {
-    int feld[10];
 
-    feld[0] = 10; // feld + index * sizeof(int)
-    feld[1] = 20; // feld + index * sizeof(int)
+    char wort[] = "hallo";
+    char buffer[100];
 
-    int* ptr = feld;
+    int a = 10;
+    stringcopy(buffer, wort);
 
+    printf("%s\n", buffer);
 
-    printf("%d\n", *ptr);
-    printf("%d\n", *feld);
-    printf("%d\n", feld[0]);
-    printf("%d\n", ptr[0]);
-
-    printf("%d\n", feld[1]);
-    printf("%d\n", ptr[1]);
-
-    printf("%d\n", *(ptr + 1));
-
-    printf("%d\n", sizeof(ptr));
-    printf("%d\n", sizeof(feld));
-
+    //printf("%s\n", wort);
+    //printf("%d\n", sizeof(wort));
 
     return 0;
 }
