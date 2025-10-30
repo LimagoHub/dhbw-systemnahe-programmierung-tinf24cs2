@@ -1,0 +1,2 @@
+C:\Users\JoachimWagner\AppData\Local\Arduino15\packages\arduino\tools\avrdude\6.3.0-arduino17\bin\avrdude.exe
+-C "C:\Users\JoachimWagner\AppData\Local\Arduino15\packages\arduino\tools\avrdude\6.3.0-arduino17\etc\avrdude.conf" -p atmega328p -c arduino -P COM3 -b 57600 -U flash:w:"$(ProjectDir)Debug\$(TargetName).hex":i
