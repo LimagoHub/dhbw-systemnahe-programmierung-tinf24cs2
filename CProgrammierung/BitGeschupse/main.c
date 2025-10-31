@@ -4,11 +4,12 @@ int main(void) {
     char x = 0b10101010;
     char y = 0b11110000;
 
-    //x |=  (1 << 5);
+    char mask = 0b00100000;
 
-    //x &= ~(1 << 5);
 
-    x ^= (1 << 5);
+    if((x & mask) != 0){
+
+    }
 
     char buffer[10];
 
