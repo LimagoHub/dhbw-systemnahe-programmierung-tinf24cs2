@@ -12,9 +12,9 @@
     <OutputFileName>$(MSBuildProjectName)</OutputFileName>
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
-    <AssemblyName>Serial</AssemblyName>
-    <Name>Serial</Name>
-    <RootNamespace>Serial</RootNamespace>
+    <AssemblyName>ADC</AssemblyName>
+    <Name>ADC</Name>
+    <RootNamespace>ADC</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
@@ -120,6 +120,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="analog.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="analog.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
